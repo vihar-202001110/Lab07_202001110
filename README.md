@@ -12,7 +12,25 @@
 
 ## Section A
 
-First, I created 5 different JAVA files, namely, P1.jav, P2.java, P3.java, P4.java, and P5.java. Each file contains the corresponding function code to be tested.
+For the program to calculate previous Date, the possible test cases are as follows
+
+| Input Data                           | Expected Outcome |
+| ------------------------------------ | ---------------- |
+| Equivalence Partitioning             |                  |
+| Month < 1                            | Error Message    |
+| Month > 12                           | Error Message    |
+| Valid Month, day < 1 or day > 31     | Error Message    |
+| Invalid year < 1900 or > 2015        | Error Message    |
+| Valid day, Month, and Year           | Previous Date    |
+| Boundary Value Analysis (DD-MM-YYYY) |
+| 01/01/1900                           | 31/12/1989       |
+| 31/12/2015                           | 30/12/2015       |
+| 29/2/1900                            | Error Message    |
+| 28/2/1900                            | 27/2/1900        |
+| 31/4/2010                            | Error Message    |
+| 1/5/2000                             | 30/4/2000        |
+
+For testing the codes, I created 5 different JAVA files, namely, P1.jav, P2.java, P3.java, P4.java, and P5.java. Each file contains the corresponding function code to be tested.
 
 > **P1.java** contains code to perform linear search on an array of integers to return the index of a particular integer. If it is not found, _-1_ is returned.
 
@@ -379,7 +397,27 @@ Below is the list of possible corner cases looking like right-angle triangle but
 
 ### G. Non-triangle Case
 
+Below is the list of possible Invalid Triangle cases
+
+| Test Case | Condition                    | Expected Outcome |
+| --------- | ---------------------------- | ---------------- |
+| 1         | A = 3, B = 4, C = 8          | Invalid Triangle |
+| 2         | A = -4, B = -3, C = 5        | Invalid Triangle |
+| 3         | A = -1, B = -1.414, C = 1.73 | Invalid Triangle |
+| 4         | A = 111, B = 1.414, C = 9.73 | Invalid Triangle |
+| 5         | A = 1, B = 53, C = 9.73      | Invalid Triangle |
+| 6         | A = 1, B = 1.414, C = -9.73  | Invalid Triangle |
+| 7         | A = 0, B = 0, C = 0          | Invalid Triangle |
+
 ### H. Non-positive Input
+
+Below is the list of possible Invalid Triangle cases
+
+| Test Case | Condition        | Expected Outcome |
+| --------- | ---------------- | ---------------- |
+| 1         | a=-1, b=2, c=3   | Invalid Triangle |
+| 2         | a=-4, b=-5, c=-7 | Invalid Triangle |
+| 3         | a=1, b=-5, c=10  | Invalid Triangle |
 
 ---
 
