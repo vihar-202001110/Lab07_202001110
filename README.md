@@ -305,6 +305,82 @@ The output of the Unittests is as follows:
 | s1="he ll", s2="hell"        | false            | Boundary Condition       |
 | s1=" hell", s2="hello"       | false            | Boundary Condition       |
 
+> P6 assumes the problem domain of P4 with _A_, _B_, and _C_ as floating values instead of integers
+
+### A. Equivalence classes for the system
+
+The possible equivalence classes and their corresponding conditions are as follows:
+
+| Equivalence Class    | Neccessary Condition                                  |
+| -------------------- | ----------------------------------------------------- |
+| Invalid Triangle     | A > B+C or B > A+C or C > A+B                         |
+| Scalene Triangle     | A != B and B != C and C != A                          |
+| Isoceles Triangle    | either A == B or B == C or A == C                     |
+| Equilateral Triangle | A == B and B == C                                     |
+| Right-angle Triangle | A^2 + B^2 = C^2 or A^2 = B^2 + C^2 or B^2 + A^2 = C^2 |
+
+### B. Test Cases for Equivalence Classes
+
+Following are list of test cases each belonging to one of the defined Equivalence class
+
+| Test Case | Condition           | Expected Outcome     |
+| --------- | ------------------- | -------------------- |
+| 1         | A = 5, B = 5, C = 5 | Equilateral Triangle |
+| 2         | A = 3, B = 4, C = 5 | Right-angle Triangle |
+| 3         | A = 2, B = 2, C = 3 | Isosceles Triangle   |
+| 4         | A = 4, B = 4, C = 7 | Scalene Triangle     |
+| 5         | A = 1, B = 1, C = 3 | Invalid Triangle     |
+
+### C. Boundary Condition A + B > C (scalene triangle)
+
+Below is the list of possible corner cases looking like scalene triangle but are not
+
+| Test Case | Condition                 | Expected Outcome |
+| --------- | ------------------------- | ---------------- |
+| 1         | A = 2, B = 3, C = 5       | Invalid Triangle |
+| 2         | A = 1, B = 2, C = 3       | Invalid Triangle |
+| 3         | A = 1, B = 1, C = 2       | Invalid Triangle |
+| 4         | A = 0.1, B = 0.1, C = 0.3 | Invalid Triangle |
+| 5         | A = 1, B = 2, C = 2.9     | Scalene Triangle |
+
+### D. Boundary Condition A = C (isosceles triangle)
+
+Below is the list of possible corner cases looking like isosceles triangle but are not
+
+| Test Case | Condition                   | Expected Outcome   |
+| --------- | --------------------------- | ------------------ |
+| 1         | A = -4, B = 3, C = -4       | Invalid Triangle   |
+| 2         | A = 0, B = 2, C = 0         | Invalid Triangle   |
+| 3         | A = 1, B = 3, C = 1         | Invalid Triangle   |
+| 4         | A = 0.1, B = 0.3, C = 0.1   | Invalid Triangle   |
+| 5         | A = 0.15, B = 0.2, C = 0.15 | Isosceles Triangle |
+
+### E. Boundary Condition A = B = C (equilateral triangle)
+
+Below is the list of possible corner cases looking like isosceles triangle but are not
+
+| Test Case | Condition                 | Expected Outcome     |
+| --------- | ------------------------- | -------------------- |
+| 1         | A = -4, B = -4, C = -4    | Invalid Triangle     |
+| 2         | A = 0, B = 0, C = 0       | Invalid Triangle     |
+| 3         | A = 10, B = 10, C = 10    | Equilateral Triangle |
+| 4         | A = 0.1, B = 0.1, C = 0.1 | Equilateral Triangle |
+
+### F. Boundary Condition $A^2$ + $B^2$ = $C^2$ (right-angle triangle)
+
+Below is the list of possible corner cases looking like right-angle triangle but are not
+
+| Test Case | Condition                    | Expected Outcome      |
+| --------- | ---------------------------- | --------------------- |
+| 1         | A = 3, B = 4, C = 5          | Right Angled Triangle |
+| 2         | A = -4, B = -3, C = 5        | Invalid Triangle      |
+| 3         | A = -1, B = -1.414, C = 1.73 | Invalid Triangle      |
+| 3         | A = 1, B = 1.414, C = 1.73   | Right Angled Triangle |
+
+### G. Non-triangle Case
+
+### H. Non-positive Input
+
 ---
 
 ## Section B
