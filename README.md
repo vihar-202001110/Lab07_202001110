@@ -422,3 +422,37 @@ Below is the list of possible Invalid Triangle cases
 ---
 
 ## Section B
+
+### 1. The control flow graph for the given problem is as follows
+
+![sfvdfv drawio](https://user-images.githubusercontent.com/123557378/231559001-a6ce137b-bb9a-4f8d-acb7-89c3d2357f4d.png)
+
+### 2. Criteria specific test case for flow graph
+
+#### a. Statement Coverage
+
+| Test Case | Input                 | Expected Output          |
+| --------- | --------------------- | ------------------------ |
+| 1         | p=[]                  | Empty Vector             |
+| 2         | p=[(1,1)]             | Vector with Single Point |
+| 3         | p=[(1,1),(2,2),(3,3)] | Vector with 3 Points     |
+
+#### b. Branch Coverage
+
+| Test Case | Input                       | Expected Output                         |
+| --------- | --------------------------- | --------------------------------------- |
+| 1         | p=[]                        | Empty Vector                            |
+| 2         | p=[(1,1),(2,2)]             | vector with 2 points                    |
+| 3         | p=[(1,1),(2,2),(3,1),(4,3)] | vector with four points                 |
+| 4         | p=[(1,2),(3,1),(2,1)]       | vector with 3 points in different order |
+
+#### c. Basic Condition Coverage
+
+| Test Case | Input                       | Expected Output                  |
+| --------- | --------------------------- | -------------------------------- |
+| 1         | p=[]                        | Empty Vector                     |
+| 2         | p=[(1,1),(2,2)]             | Vector with two points           |
+| 3         | p=[(1,1),(2,2),(3,1),(4,3)] | vector with four points          |
+| 4         | p=[(1,2),(3,1),(2,1)]       | Vector with 3 indentical points  |
+| 5         | p=[(1,1),(1,1),(1,1)]       | vector with identical points     |
+| 6         | p=[(1,1),(2,2),(1,1)]       | vector with two identical points |
